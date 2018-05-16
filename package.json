@@ -1,0 +1,20 @@
+{
+  "name": "CoachingCloud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://whisky87@github.com/whisky87/json-api-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whisky87/json-api-challenge/issues"
+  },
+  "homepage": "https://github.com/whisky87/json-api-challenge#readme"
+}
