@@ -8,9 +8,9 @@ plugins.push(new WebpackShellPlugin({
     onBuildEnd: ['nodemon ./dist/bundle.js']
 }));
 
-plugins.push(new WebpackCopyPlugin([
-    { from: './assets', to: 'assets'}
-]));
+// plugins.push(new WebpackCopyPlugin([
+//     { from: './assets', to: 'assets'}
+// ]));
 
 module.exports = {
     entry: './server.js',

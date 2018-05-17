@@ -23,6 +23,10 @@ if (env.error) {
 
 var port = process.env.SB_API_PORT || 3001;
 
+var myPath = path.join(root_path, 'vendor', 'contract.js')
+debug(myPath);
+
+
 
 //for parsing application/json
 //app.use(bodyParser.urlencoded({ extended: false }));
