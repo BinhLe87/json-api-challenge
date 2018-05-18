@@ -23,7 +23,7 @@ var ProductSchema = new Schema({
     tags: [String],
     category: {
         type: Number,
-        ref: 'Category'
+        ref: 'category'
     }
 });
 

@@ -26,12 +26,12 @@ var CategorySchema = new Schema({
     },
     products: [{
         type: Number,
-        ref: 'Product'
+        ref: 'product'
     }]
 });
 
 
 CategorySchema.plugin(timestamps);
-CategorySchema.plugin(mongoose_auto_increment.plugin, 'Category');
+CategorySchema.plugin(mongoose_auto_increment.plugin, 'category');
 
 exports = module.exports = mongoose.model('category', CategorySchema);
