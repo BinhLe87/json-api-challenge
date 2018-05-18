@@ -34,4 +34,4 @@ var CategorySchema = new Schema({
 CategorySchema.plugin(timestamps);
 CategorySchema.plugin(mongoose_auto_increment.plugin, 'Category');
 
-exports = module.exports = mongoose.model('Category', CategorySchema);
+exports = module.exports = mongoose.model('category', CategorySchema);

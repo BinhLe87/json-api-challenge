@@ -31,4 +31,4 @@ var ProductSchema = new Schema({
 ProductSchema.plugin(timestamps);
 ProductSchema.plugin(mongoose_auto_increment.plugin, 'Product');
 
-exports = module.exports = mongoose.model('Product', ProductSchema);
+exports = module.exports = mongoose.model('product', ProductSchema);
