@@ -14,10 +14,11 @@ Module demo for handle requests that obey Json API specification, reference at [
   * `http://127.0.0.1:3000/product` to query all products
   * `http://127.0.0.1:3000/product/{product_id}/category` to query category of the specificed product
   * `http://127.0.0.1:3000/category/{cat_id}/product` to query all products belong to a category
+  * Support **CRUD** operations on any endpoints. In this case is `product` and `category` endpoints.
 
 ## Test submit API and fetch response data on demo purpose
 
-  * Submit `GET` request [`http://127.0.0.1:3000/product?page[number]=1&page[size]=2`](http://127.0.0.1:3000/product?page[number]=1&page[size]=2)
+1. Submit `GET` request [`http://127.0.0.1:3000/product?page[number]=1&page[size]=2`](http://127.0.0.1:3000/product?page[number]=1&page[size]=2)
 
 ```
 {
@@ -73,8 +74,8 @@ Module demo for handle requests that obey Json API specification, reference at [
     "errors": null
 }
 ```
-
-  * Submit `GET` request [`http://127.0.0.1:3000/product/1/category`](http://127.0.0.1:3000/product/1/category)
+---
+2. Submit `GET` request [`http://127.0.0.1:3000/product/1/category`](http://127.0.0.1:3000/product/1/category)
 
 ```
 {
@@ -91,8 +92,8 @@ Module demo for handle requests that obey Json API specification, reference at [
     }
 }
 ```
-
-  * Submit `GET` request [`http://127.0.0.1:3000/category/1/product?page[number]=1&page[size]=2`](http://127.0.0.1:3000/category/1/product?page[number]=1&page[size]=2)
+---
+  3. Submit `GET` request [`http://127.0.0.1:3000/category/1/product?page[number]=1&page[size]=2`](http://127.0.0.1:3000/category/1/product?page[number]=1&page[size]=2)
 
 ```
 {
@@ -131,3 +132,57 @@ Module demo for handle requests that obey Json API specification, reference at [
     "errors": []
 }
 ```
+---
+4. Submit `POST` request [`http://127.0.0.1:3000/category`](http://127.0.0.1:3000/category)
+
+```
+{
+  "data": {
+    "type": "category",
+    "attributes": {
+      "name": "category name need to create",
+      "description": "production description",
+      "parent": null,
+      "image": "",
+      "count": 0
+    },
+    "relationships": {
+      "products": {
+        "data": [
+        		{ "type": "product", "id": "1" },
+        		{ "type": "product", "id": "5" },
+        		{ "type": "product", "id": "10" }
+        	]
+      }
+    }
+  }
+}
+```
+---
+5. Submit `PATCH` request [`http://127.0.0.1:3000/category`](http://127.0.0.1:3000/category)
+
+```
+{
+  "data": {
+    "type": "category",
+    "id": 22,
+    "attributes": {
+      "name": "changed category 1",
+      "description": "changed description category 1",
+      "parent": null,
+      "image": "",
+      "count": 1
+    },
+    "relationships": {
+      "products": {
+        "data": [
+        		{ "type": "product", "id": "10" },
+        		{ "type": "product", "id": "20" }
+        	]
+      }
+    }
+  }
+}
+```
+---
+6. Submit `DELETE` request [`http://127.0.0.1:3000/category/21`](http://127.0.0.1:3000/category/21)
