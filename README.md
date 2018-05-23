@@ -10,11 +10,14 @@ Module demo for handle requests that obey Json API specification, reference at [
 
 
 ## Features
-
-  * `http://127.0.0.1:3000/product` to query all products
+  * `http://127.0.0.1:3000/product` or `http://127.0.0.1:3000/products` to query all products
   * `http://127.0.0.1:3000/product/{product_id}/category` to query category of the specificed product
   * `http://127.0.0.1:3000/category/{cat_id}/product` to query all products belong to a category
+  *  Submit `PATCH` request `http://127.0.0.1:3000/category`
+  *  Submit `DELETE` request `http://127.0.0.1:3000/category/21`
   * Support **CRUD** operations on any endpoints. In this case is `product` and `category` endpoints.
+  * Support HATEOS ***Links*** field
+
 
 ## Test submit API and fetch response data on demo purpose
 
@@ -168,7 +171,7 @@ Module demo for handle requests that obey Json API specification, reference at [
     "id": 22,
     "attributes": {
       "name": "changed category 1",
-      "description": "changed description category 1",
+      "description": "**changed** description category 1",
       "parent": null,
       "image": "",
       "count": 1
@@ -185,4 +188,27 @@ Module demo for handle requests that obey Json API specification, reference at [
 }
 ```
 ---
-6. Submit `DELETE` request [`http://127.0.0.1:3000/category/21`](http://127.0.0.1:3000/category/21)
+6. Submit `DELETE` request [`http://127.0.0.1:3000/category/21`](http://127.0.0.1:3000/category/21)****
+---
+7. Submit `GET` request[`http://127.0.0.1:3000/category/22`](http://127.0.0.1:3000/category/22). In response message contains HATEOS ***Links***
+
+```
+{
+    "type": "category",
+    "id": "22",
+    "attributes": {
+        "name": "changed category 1",
+        "description": "changed description category 1",
+        "parent": null,
+        "image": "",
+        "count": 1
+    },
+    "links": {
+        "self": "/category/22",
+        "related": {
+            "href": "/category/22/products",
+            "rel": "product"
+        }
+    }
+}
+```
