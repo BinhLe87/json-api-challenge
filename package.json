@@ -37,6 +37,7 @@
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-timestamp": "^0.6.0",
     "morgan": "^1.9.0",
-    "winston": "^2.4.2"
+    "winston": "^2.4.2",
+    "winston-papertrail": "^1.0.5"
   }
 }

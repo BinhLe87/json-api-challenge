@@ -1,6 +1,14 @@
 'use strict';
 
 var winston = require('winston');
+require('winston-papertrail').Papertrail;
+
+var winstonPapertrail = new winston.transports.Papertrail({
+    host: 'logs5.papertrailapp.com',
+    port: 19155,
+    level: 'debug',
+    hostname: 'shopJsonAPI'
+})
 
 var options = {
     file: {
@@ -17,7 +25,9 @@ var options = {
         handleExceptions: true,
         json: false,
         colorize: true,
+        timestamp: true
     },
+    winstonPapertrail: winstonPapertrail
 };
 
 
@@ -25,7 +35,8 @@ var logger = new winston.Logger({
 
     transports: [
         new winston.transports.File(options.file),
-        new winston.transports.Console(options.console)
+        new winston.transports.Console(options.console),
+        winstonPapertrail
     ],
     exitOnError: false
 });
