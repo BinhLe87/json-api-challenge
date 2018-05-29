@@ -22,7 +22,8 @@
     "prestart": "npm run clean",
     "start": "webpack --config webpack.config.js",
     "poststart": "webpack --watch",
-    "debug": "nodemon --inspect server.js"
+    "debug": "nodemon --inspect server.js",
+    "debug_attached": "nodemon --inspect-brk server.js"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -31,6 +32,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-query-int": "^3.0.0",
+    "joi": "^13.3.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.1",
     "mongoose": "^5.0.16",
