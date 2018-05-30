@@ -15,8 +15,7 @@ var bodyParser = require('body-parser');
 var utils = require('./lib/utils');
 
 
-
-var port = process.env.PORT || 3001;
+var port = config.server.port || 3001;
 
 var myPath = path.join(root_path, 'vendor', 'contract.js')
 debug(myPath);
