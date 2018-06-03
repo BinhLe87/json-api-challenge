@@ -9,6 +9,22 @@
             "processId": "${command:PickProcess}",
             "restart": true,
             "protocol": "inspector"
+        },
+        {
+            "type": "node",
+            "name": "Debug file test",
+            "program": "${file}",
+            "request": "launch",
+            "env": {
+                "NODE_ENV": "development",
+                "PORT": 3005
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Compounds but only call Debug File Test",
+            "configurations": ["Debug file test"]
         }
     ]
 }

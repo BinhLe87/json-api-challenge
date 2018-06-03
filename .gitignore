@@ -59,3 +59,13 @@ typings/
 
 # next.js build output
 .next
+
+# writing classes test only for experiment purpose
+experiments
+
+
+#dist directory
+dist
+
+#gitignore file
+.gitignore
