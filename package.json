@@ -28,6 +28,7 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
+    "co": "git+https://github.com/whisky87/co.git",
     "connect-mongo": "^2.0.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
@@ -40,6 +41,7 @@
     "mongoose-timestamp": "^0.6.0",
     "mongoose-timezone": "^1.1.0",
     "morgan": "^1.9.0",
+    "setprototypeof": "^1.1.0",
     "uuid": "^3.2.1",
     "winston": "^2.4.2",
     "winston-papertrail": "^1.0.5"
